@@ -113,7 +113,7 @@ public class ESMovieManager {
 		
 		HttpResponse response = null;
 		try {
-			response = httpClient.execute(searchRequest);
+			response = httpClient.execute(searchRequest); //httpclient is like 'curl' but for java
 		} catch (ClientProtocolException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {
@@ -143,6 +143,7 @@ public class ESMovieManager {
 		}
 
 
+			//this unwraps the GSON onion layers and puts it into list
 		for (SearchHit<Movie> hit : esResponse.getHits().getHits()) {
 			result.add(hit.getSource());
 		}

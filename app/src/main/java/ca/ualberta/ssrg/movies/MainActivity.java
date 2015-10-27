@@ -71,9 +71,10 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		
-		
+		// start a new thread and give it new value *
 		SearchThread thread = new SearchThread("*");
 
+		//MAKE SURE WRITE OUR CODE IN RUN BUT CALL IT IN START
 		thread.start();
 
 
